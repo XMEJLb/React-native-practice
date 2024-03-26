@@ -1,20 +1,28 @@
-import { Alert } from "react-native";
+import { Alert, Linking } from "react-native";
 import { ProfileCard } from "./components/ProfileCard/ProfileCard";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { s } from "./App.style";
 
 export default function App() {
-  function hello(name) {
-    Alert.alert("Hello! " + name);
+  function goToTelegram() {
+    Linking.openURL("https://t.me/khmell_magic");
   }
-
+  function goToVk() {
+    Linking.openURL("https://vk.com/khmell_magic");
+  }
+  function goToGithub() {
+    Linking.openURL("https://github.com/XMEJLb");
+  }
   return (
     <SafeAreaProvider>
       <SafeAreaView style={s.container}>
         <ProfileCard
-          onPressTitle={hello}
+          onPressTelegram={goToTelegram}
+          onPressVk={goToVk}
+          onPressGithub={goToGithub}
           firstName={"Den"}
           lastName={"Khmell"}
+          age={28}
         />
       </SafeAreaView>
       {/* <AgeCounter /> */}

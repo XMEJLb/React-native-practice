@@ -7,13 +7,10 @@ export function ProfileCard({
   firstName,
   lastName,
   age,
-  isOpenToWork,
-  onPressTitle,
+  onPressTelegram,
+  onPressVk,
+  onPressGithub,
 }) {
-  function onPressTitle_() {
-    onPressTitle(firstName + " " + lastName);
-  }
-
   return (
     <View style={s.container}>
       <View style={s.header}>
@@ -24,17 +21,16 @@ export function ProfileCard({
           />
         </View>
         <View style={s.texts}>
-          <TouchableOpacity onPress={onPressTitle_}>
-            <Text style={s.name}>
-              {firstName} {lastName}
-            </Text>
-          </TouchableOpacity>
-          <Text>Begginer app dev, Im {age} years old. </Text>
+          <Text style={s.name}>
+            {firstName} {lastName}
+          </Text>
+
+          <Text>Begginer app dev, I`m {age} years old. </Text>
           {isOpenToWork && <Text>Availible for a work</Text>}
         </View>
       </View>
       <View style={s.social}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onPressTelegram}>
           <FontAwesome name="telegram" size={24} color="black" />
         </TouchableOpacity>
         <TouchableOpacity>
