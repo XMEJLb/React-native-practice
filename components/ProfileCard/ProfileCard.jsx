@@ -7,9 +7,7 @@ export function ProfileCard({
   firstName,
   lastName,
   age,
-  onPressTelegram,
-  onPressVk,
-  onPressGithub,
+  onPressgoSocialMediaIcon,
 }) {
   return (
     <View style={s.container}>
@@ -26,17 +24,16 @@ export function ProfileCard({
           </Text>
 
           <Text>Begginer app dev, I`m {age} years old. </Text>
-          {isOpenToWork && <Text>Availible for a work</Text>}
         </View>
       </View>
       <View style={s.social}>
-        <TouchableOpacity onPress={onPressTelegram}>
+        <TouchableOpacity onPress={() => onPressgoSocialMediaIcon("telegram")}>
           <FontAwesome name="telegram" size={24} color="black" />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => onPressgoSocialMediaIcon("vk")}>
           <Entypo name="vk-with-circle" size={24} color="black" />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => onPressgoSocialMediaIcon("github")}>
           <FontAwesome name="github" size={24} color="black" />
         </TouchableOpacity>
       </View>
